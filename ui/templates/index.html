@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Projection by TEMPLATED</title>
+		<title>E-TEC</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		{% load static %}
@@ -17,11 +17,13 @@
 		<!-- Header -->
 			<header id="header">
 				<div class="inner">
-					<a href="index.html" class="logo"><strong>Projection</strong> by TEMPLATED</a>
+					<a href="/home/" class="logo">
+						<img src="{% static 'images/logo.png' %}" style="width: 60px; height: 60px;" alt="E-TEC">
+					</a>
 					<nav id="nav">
-						<a href="index.html">Home</a>
-						<a href="generic.html">Generic</a>
-						<a href="elements.html">Elements</a>
+						<a href="/home/">Home</a>
+						<a href="/services/">Services</a>
+						<a href="/about/">About</a>
 					</nav>
 					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
 				</div>
@@ -32,26 +34,28 @@
 				<div class="inner">
 					<header>
 						<h1>Welcome to E-TEC</h1>
+						<p>Excellence Training and Education Company<br>
+							We provide specialized training programs for your workforce.</p>
 					</header>
 
 					<div class="flex ">
 
 						<div>
-							<span class="icon fa-car"></span>
-							<h3>Aliquam</h3>
-							<p>Suspendisse amet ullamco</p>
+							<span class="icon fa-clone"></span>
+							<h3>Excel</h3>
+							<p>Efficient, data trends, great charts.</p>
 						</div>
 
 						<div>
-							<span class="icon fa-camera"></span>
-							<h3>Elementum</h3>
-							<p>Class aptent taciti ad litora</p>
+							<span class="icon fa-bolt"></span>
+							<h3>Management</h3>
+							<p>Leadership, strategy, work culture.</p>
 						</div>
 
 						<div>
-							<span class="icon fa-bug"></span>
-							<h3>Ultrices</h3>
-							<p>Nulla vitae mauris non felis</p>
+							<span class="icon fa-eye"></span>
+							<h3>Policy</h3>
+							<p>Security, governance, cultural.</p>
 						</div>
 
 					</div>
@@ -68,25 +72,32 @@
 				<div class="inner">
 					<div class="flex flex-2">
 						<article>
-							<div class="image round">
-								<img src="images/pic01.jpg" alt="Pic 01" />
+							<div class="image">
+								<img src="{% static 'images/excel.png' %}" alt="Excel" />
 							</div>
 							<header>
-								<h3>Lorem ipsum<br /> dolor amet nullam</h3>
+								<h3>Create New<br /> Insights</h3>
 							</header>
-							<p>Morbi in sem quis dui placerat ornare. Pellentesquenisi<br />euismod in, pharetra a, ultricies in diam sed arcu. Cras<br />consequat  egestas augue vulputate.</p>
+							<p>
+								Excel is a powerful productivity tool to have.<br />
+								Ensure your employees take full advantage <br />
+								by learning the fundemental techniques.
+							</p>
 							<footer>
 								<a href="#" class="button">Learn More</a>
 							</footer>
 						</article>
 						<article>
-							<div class="image round">
-								<img src="images/pic02.jpg" alt="Pic 02" />
+							<div class="image">
+								<img src="{% static 'images/culture.png' %}" alt="Culture" />
 							</div>
 							<header>
-								<h3>Sed feugiat<br /> tempus adipicsing</h3>
+								<h3>Build Great<br /> Work Culture</h3>
 							</header>
-							<p>Pellentesque fermentum dolor. Aliquam quam lectus<br />facilisis auctor, ultrices ut, elementum vulputate, nunc<br /> blandit ellenste egestagus commodo.</p>
+							<p>
+								Invest in your workforce. Bring your team together <br />
+								with educational leadership and teamwork services.<br />
+								Unlock the potential of your people.</p>
 							<footer>
 								<a href="#" class="button">Learn More</a>
 							</footer>
@@ -119,19 +130,45 @@
 							<li><input value="Send Message" class="button alt" type="submit"></li>
 						</ul>
 					</form>
-
+					<hr class="major" />
+					<div class="row">
+							<!-- Break -->
+							<div class="4u 12u$(medium)">
+								<h3>Our Address</h3>
+								<p>
+									E-TEC <br>
+									12 Spadina Road, Unit 520 <br>
+									Toronto, Ontario <br> 
+									M2C, 5E7
+								</p>
+							</div>
+							<div class="4u 12u$(medium)">
+								<h3>Contact Us</h3>
+								<p>
+									647-201-4812 <br>
+									welcome@e-tec.ca
+								</p>
+							</div>
+							<div class="4u$ 12u$(medium)">
+								<h3>Social Media</h3>
+								<p>
+									<span class="icon fa-facebook-f right">&emsp; pages/etec</span> <br>
+									<span class="icon fa-instagram right"> &emsp; @e-tec</span> <br>
+									<span class="icon fa-linkedin right">&emsp; e-tec</span>
+								</p>
+							</div>
+						</div>
 					<div class="copyright">
-						&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.
+						&copy;<a href="/home/">E-TEC</a>. Design: <a href="https://atomictech.ca">Atomic Tech</a>. 
 					</div>
-
+					
 				</div>
 			</footer>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
+			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'assets/js/skel.min.js' %}"></script>
+			<script src="{% static 'assets/js/util.js' %}"></script>
+			<script src="{% static 'assets/js/main.js' %}"></script>
 	</body>
 </html>
