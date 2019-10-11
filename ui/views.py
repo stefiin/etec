@@ -1,9 +1,9 @@
 from django.shortcuts import render
 
 # Create your views here.
-def index(request):
-    return render(request, "index.html")
-def services(request):
-    return render(request, "services.html")
-def about(request):
-    return render(request, "about.html")
+def index(request, page):
+    return render(request, "index.html", context={"page": page})
+
+def load_single(request):
+	source_file = request.GET.get('f', 'home') + ".html"
+	return render(request, source_file)
