@@ -15,6 +15,8 @@ function swapPage(target, should_push) {
 		$("#single_page").html(htmlDoc.getElementsByTagName("body")[0].innerHTML);
 		// insert into history
 		if (should_push) window.history.pushState({target: target}, document.title, "/" + target + "/");
+		// fix navbar
+		$("#navPanel").html($('#nav').html() + '<a href="#navPanel" class="close"></a>');
 	});
 }
 
