@@ -7,17 +7,28 @@
 function swapPage(target, should_push) {
 	// just a silly spinner
 	$("#single_page").append("<div class='sp-div'><div class='loader'></div></div>");
-	// fetch contents of the new page that we are changing to.
-	$.get("/load_single/?f=" + target, function(data) {
-		// parse the document using DOMParser API
-		var htmlDoc = (new DOMParser()).parseFromString(data, "text/html");
+	if (target in window.cachedPages) {
 		// insert contents of the body of the pulled doc into #single_page
-		$("#single_page").html(htmlDoc.getElementsByTagName("body")[0].innerHTML);
+		$("#single_page").html(window.cachedPages[target].getElementsByTagName("body")[0].innerHTML);
 		// insert into history
 		if (should_push) window.history.pushState({target: target}, document.title, "/" + target + "/");
 		// fix navbar
 		$("#navPanel").html($('#nav').html() + '<a href="#navPanel" class="close"></a>');
-	});
+	} else {
+		// fetch contents of the new page that we are changing to.
+		$.get("/load_single/?f=" + target, function(data) {
+			// parse the document using DOMParser API
+			var htmlDoc = (new DOMParser()).parseFromString(data, "text/html");
+			// insert into cache
+			window.cachedPages[target] = htmlDoc;
+			// insert contents of the body of the pulled doc into #single_page
+			$("#single_page").html(htmlDoc.getElementsByTagName("body")[0].innerHTML);
+			// insert into history
+			if (should_push) window.history.pushState({target: target}, document.title, "/" + target + "/");
+			// fix navbar
+			$("#navPanel").html($('#nav').html() + '<a href="#navPanel" class="close"></a>');
+		});
+	}
 }
 
 function initSP(target) {
@@ -30,3 +41,5 @@ window.addEventListener('popstate', function(event) {
 	if (target == null) return;
 	swapPage(target, false);
 });
+
+window.cachedPages = {};
