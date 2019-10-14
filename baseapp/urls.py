@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from ui.views import index, load_single
+from ui.views import index, load_single, ContactUs
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('load_single/', load_single),
     path('<slug:page>/', index),
+    path('api/contact/', ContactUs.as_view())
 ]
