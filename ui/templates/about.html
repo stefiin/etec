@@ -1,29 +1,14 @@
-<!DOCTYPE HTML>
-<!--
-	Projection by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
-<html>
-	<head>
-		<title>E-TEC</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		{% load static %}
-		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
-        <link rel="stylesheet" href="{% static 'assets/css/atomic.css' %}" />
-	</head>
-	<body id="single_page">
+{% load static %}
 		<!-- Header -->
 			<header id="header" style="background: #6cc091;">
 				<div class="inner">
-					<a href="#" onclick="swapPage('home', true);" class="logo">
+					<a href="javascript:void(0);" onclick="swapPage('home', true);" class="logo">
                         <img src="{% static 'images/logo.png' %}" style="width: 40px; height: 40px; margin-top: 5px" alt="E-TEC">
                     </a>
                     <nav id="nav">
-                        <a href="#" onclick="swapPage('home', true);">Home</a>
-                        <a href="#" onclick="swapPage('services', true);">Services</a>
-                        <a href="#" onclick="swapPage('about', true);">About</a>
+                        <a href="javascript:void(0);" onclick="swapPage('home', true);">Home</a>
+                        <a href="javascript:void(0);" onclick="swapPage('services', true);">Services</a>
+                        <a href="javascript:void(0);" onclick="swapPage('about', true);">About</a>
                     </nav>
 					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
 				</div>
@@ -94,17 +79,8 @@
                             </div>
                         </div>
                     <div class="copyright">
-                        &copy;<a href="#" onclick="swapPage('home', true);">E-TEC</a>. Design: <a href="https://atomictech.ca">Atomic Tech</a>. 
+                        &copy;<a href="javascript:void(0);" onclick="swapPage('home', true);">E-TEC</a>. Design: <a href="https://atomictech.ca">Atomic Tech</a>. 
                     </div>
                     
                 </div>
             </footer>
-
-            <!-- Scripts -->
-            <script src="{% static 'assets/js/jquery.min.js' %}"></script>
-            <script src="{% static 'assets/js/skel.min.js' %}"></script>
-            <script src="{% static 'assets/js/util.js' %}"></script>
-            <script src="{% static 'assets/js/main.js' %}"></script>
-            <script src="{% static 'assets/js/atomic.js' %}"></script>
-    </body>
-</html>
