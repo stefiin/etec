@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+
+from django.template.exceptions import TemplateDoesNotExist
 
 import re
 
@@ -14,7 +16,11 @@ def index(request, page):
 
 def load_single(request):
 	source_file = request.GET.get('f', 'home') + ".html"
-	return render(request, source_file)
+	try:
+		r = render(request, source_file)
+	except TemplateDoesNotExist:
+		return redirect('/home/')
+	return r
 
 class ContactUs(APIView):
 
@@ -36,11 +42,11 @@ class ContactUs(APIView):
 		msg['From'] = "noreply@e-tec.ca"
 
 		# fill in valid smtp server here (possibly gmail's servers)
-		s = smtplib.SMTP_SSL('')
+		s = smtplib.SMTP_SSL('smtp-relay.gmail.com:465')
 		# fill in valid credentials for smtp server here, if needed
-		s.login('','')
+		s.login('admin@e-tec.ca','myetec$2019')
 		# fill in the recipients for the email here
-		s.sendmail('noreply@e-tec.ca',[''], msg.as_string())
+		s.sendmail('noreply@e-tec.ca',['admin@e-tec.ca'], msg.as_string())
 		s.quit()
 
 		return Response()

@@ -46,7 +46,7 @@
 					</div>
 
 					<footer>
-						<a href="#" class="button">Get Started</a>
+						<div class="button" onclick="scrollTo('#contact_form');">Get Started</div>
 					</footer>
 				</div>
 			</section>
@@ -69,7 +69,7 @@
 								by learning the fundemental techniques.
 							</p>
 							<footer>
-								<a href="#" class="button">Learn More</a>
+								<div class="button" onclick="scrollTo('#contact_form');">Learn More</div>
 							</footer>
 						</article>
 						<article>
@@ -84,7 +84,7 @@
 								with educational leadership and teamwork services.<br />
 								Unlock the potential of your people.</p>
 							<footer>
-								<a href="#" class="button">Learn More</a>
+								<div class="button" onclick="scrollTo('#contact_form');">Learn More</div>
 							</footer>
 						</article>
 					</div>
@@ -95,7 +95,7 @@
 			<footer id="footer">
 				<div class="inner">
 
-					<h3>Get in touch</h3>
+					<h3 id="contact_form">Get in touch</h3>
 
 					<form onsubmit="return contact_us();">
 
@@ -186,5 +186,11 @@
 				function validateEmail(email) {
 					var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 					return re.test(email);
+				}
+
+				function scrollTo(div) {
+					$('html,body').animate({
+						scrollTop: $(div).offset().top-10
+					});
 				}
 			</script>

@@ -40,6 +40,8 @@
 	// Off-Canvas Navigation.
 
 		// Navigation Panel.
+		// This needed to be removed, it was duplicating the navPanel element
+		/*
 			$(
 				'<div id="navPanel">' +
 					$('#nav').html() +
@@ -54,7 +56,7 @@
 					resetScroll: true,
 					resetForms: true,
 					side: 'left'
-				});
+				});*/
 
 		// Fix: Remove transitions on WP<10 (poor/buggy performance).
 			if (skel.vars.os == 'wp' && skel.vars.osVersion < 10)
