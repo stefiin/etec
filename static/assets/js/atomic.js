@@ -5,34 +5,41 @@
 *  or false if we are navigating via browser forward/back and no new state should be pushed.
 */
 function swapPage(target, should_push) {
+	// just a silly spinner
 	$("#single_page").append("<div class='sp-div'><div class='loader'></div></div>");
-	// fetch contents of the new page that we are changing to.
-	$.get("/" + target + "/", function(data) {
-		// parse the document using DOMParser API
-		var htmlDoc = (new DOMParser()).parseFromString(data, "text/html");
-		// insert contents of #single_page into body
-		$("#single_page").html(htmlDoc.getElementById("single_page").innerHTML);
-		// get title of loaded document
-		var new_title = htmlDoc.getElementsByTagName("title")[0].innerText;
-		// push history state and update URL
-		if (should_push) window.history.pushState({target: target}, new_title, "/" + target + "/");
-	});
+	if (target in window.cachedPages) {
+		// insert contents of the body of the pulled doc into #single_page
+		$("#single_page").html(window.cachedPages[target].getElementsByTagName("body")[0].innerHTML);
+		// insert into history
+		if (should_push) window.history.pushState({target: target}, document.title, "/" + target + "/");
+		// fix navbar
+		$("#navPanel").html($('#nav').html() + '<a href="#navPanel" class="close"></a>');
+	} else {
+		// fetch contents of the new page that we are changing to.
+		$.get("/load_single/?f=" + target, function(data) {
+			// parse the document using DOMParser API
+			var htmlDoc = (new DOMParser()).parseFromString(data, "text/html");
+			// insert into cache
+			window.cachedPages[target] = htmlDoc;
+			// insert contents of the body of the pulled doc into #single_page
+			$("#single_page").html(htmlDoc.getElementsByTagName("body")[0].innerHTML);
+			// insert into history
+			if (should_push) window.history.pushState({target: target}, document.title, "/" + target + "/");
+			// fix navbar
+			$("#navPanel").html($('#nav').html() + '<a href="#navPanel" class="close"></a>');
+		});
+	}
 }
 
-/**
-* Handles backward/forward navigation.
-*/
-function historyChange(event) {
-	if (event.state == undefined || event.state == null) return true;
-	// get the location we want to swap page to
+function initSP(target) {
+	swapPage(target, true);
+}
+
+window.addEventListener('popstate', function(event) {
+	if (event.state == null) return;
 	var target = event.state.target;
-	// if it's undefined we can just let the browser handle this
-	if (target === undefined) return true;
-	// else, we handle the page swap
+	if (target == null) return;
 	swapPage(target, false);
-}
+});
 
-// setup. we need to put some data into the current state.
-window.history.replaceState({target: window.location.pathname.replace(/\//g, '')}, document.title, window.location.pathname);
-// bind event listener for state changes
-window.addEventListener('popstate', historyChange);
+window.cachedPages = {};
