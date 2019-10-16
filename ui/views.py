@@ -36,11 +36,11 @@ class ContactUs(APIView):
 		msg['From'] = "noreply@e-tec.ca"
 
 		# fill in valid smtp server here (possibly gmail's servers)
-		s = smtplib.SMTP_SSL('')
+		s = smtplib.SMTP_SSL('smtp-relay.gmail.com:465')
 		# fill in valid credentials for smtp server here, if needed
-		s.login('','')
+		s.login('admin@e-tec.ca','myetec$2019')
 		# fill in the recipients for the email here
-		s.sendmail('noreply@e-tec.ca',[''], msg.as_string())
+		s.sendmail('noreply@e-tec.ca',['josh@atomictech.ca'], msg.as_string())
 		s.quit()
 
 		return Response()
