@@ -16,7 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from ui.views import index, load_single, ContactUs
+from django.views.generic import RedirectView
+
 urlpatterns = [
+    path('', RedirectView.as_view(url='/home/')),
     path('admin/', admin.site.urls),
     path('load_single/', load_single),
     path('<slug:page>/', index),
