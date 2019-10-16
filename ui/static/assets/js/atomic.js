@@ -43,3 +43,44 @@ window.addEventListener('popstate', function(event) {
 });
 
 window.cachedPages = {};
+
+
+function contact_us() {
+	// get variables
+	var name = $("#name").val();
+	var mail = $("#email").val();
+	var message = $("#message").val();
+
+	// confirm all fields are filled out
+	if (name == "" || mail == "" || message == "") {
+		$("#error_contact").html("<p>Please fill out all fields.</p>");
+		return false;
+	}
+
+	// check if mail is a valid email address
+	if (!validateEmail(mail)) {
+		$("#error_contact").html("<p>E-mail address is in an incorrect format.</p>");
+		return false;
+	}
+
+	// ajax call to send email
+	$.post("/api/contact/", {name: name, mail: mail, message: message}, function(data) {
+		$("#error_contact").html("<p>E-mail has been sent to E-TEC successfully.</p>");
+	}).fail(function(jqXHR) {
+		$("#error_contact").html("<p>Failed to send email to E-TEC.</p>");
+		$("#error_contact").append("<p>" + jqXHR.responseJSON.error + "</p>");
+	});
+
+	return false;
+}
+
+function validateEmail(email) {
+	var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	return re.test(email);
+}
+
+function scrollToDiv(div) {
+	$('html,body').animate({
+		scrollTop: $(div).offset().top-10
+	});
+}
