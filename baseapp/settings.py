@@ -28,7 +28,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',
     'etec-256101.appspot.com',
-    'e-tec.ca'
+    'e-tec.ca',
+    'etec-261821.appspot.com',
 ]
 
 
