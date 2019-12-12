@@ -1891,6 +1891,10 @@
 		flex: 1;
 	}
 
+	.flex-obj > h3 {
+		font-size: 1.75em !important;
+	}
+
 		.flex.flex-2 {
 			-moz-justify-content: space-between;
 			-webkit-justify-content: space-between;
@@ -2524,9 +2528,9 @@
 		-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		background-color: transparent;
+		background-color: #6cc091;
 		box-shadow: inset 0 0 0 5px #6cc091;
-		color: #6cc091 !important;
+		color: white !important;
 		border-radius: 30px;
 		border: 0;
 		cursor: pointer;
