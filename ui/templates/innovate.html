@@ -1,0 +1,51 @@
+{% load static %}
+		<!-- Header -->
+			<header id="header" style="background: #6cc091;">
+				<div class="inner">
+					<a href="javascript:void(0);" onclick="swapPage('home', true);" class="logo">
+						<img src="{% static 'images/logo.png' %}" style="width: 40px; height: 40px; margin-top: 8px" alt="E-TEC">
+					</a>
+					<nav id="nav">
+						<a href="javascript:void(0);" onclick="swapPage('home', true);">Home</a>
+						<a href="javascript:void(0);" onclick="swapPage('services', true);">Services</a>
+						<a href="javascript:void(0);" onclick="swapPage('about', true);">About</a>
+					</nav>
+					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+				</div>
+            </header>
+        <!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="inner">
+					<header class="align-center">
+						<h2>innovate</h2>
+						<p>Our services include, but are not limited to </p>
+						<div class="button" onclick="scrollToDiv('#contact_form');">Contact Us</div>
+                    </header>
+                    <hr class="major" />
+                    <!-- Content -->
+						<div class="row">
+							<section class="6u 12u$(medium)">
+								<h2>Innovative Rehabilitation</h2>
+								<p>Our state of the art rehabilitation training combines online courses with on-site practical applications specifically designed to sharpen the skills of educated medical professionals, from Physiotherapists and Chiropractors to Occupational Therapists and Personal Support Workers. Our courses detail case management strategies, analytical skill development, practical data collection, and operation of innovative technologies, resulting in elevated client care. With a performance-based approach, our training enhances the professional skills of care providers and delivers the most effective treatment plans for a myriad of cases. 
+								</p>
+							</section>
+							<section class="3u 6u(medium) 12u$(small)">
+								<h3>Online Modules</h3>
+								<p>
+									<strong>Integrated Disability Management </strong><br>
+									<br>
+									<strong>Multi-factoral Strategies of Home Modification </strong><br>
+									<br>
+									<strong>Chronic Pain Management and Game Ready Operation </strong> <br>
+								</p>
+							</section>
+							<section class="3u$ 6u$(medium) 12u$(small)">
+								<br>
+								<br>
+								<br>
+								<br>
+								<br>
+								<div class="button" onclick="scrollToDiv('#contact_form');">Learn More</div>
+							</section>
+                        </div>
+                        <hr class="major" />
