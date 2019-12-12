@@ -7,6 +7,8 @@
 function swapPage(target, should_push) {
 	// just a silly spinner
 	$("#single_page").append("<div class='sp-div'><div class='loader'></div></div>");
+	// scroll to top of page
+	$("html").scrollTop(0);
 	if (target in window.cachedPages) {
 		// insert contents of the body of the pulled doc into #single_page
 		$("#single_page").html(window.cachedPages[target].getElementsByTagName("body")[0].innerHTML);

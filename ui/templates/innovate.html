@@ -1,9 +1,9 @@
 {% load static %}
-		<!-- Header -->
-			<header id="header" style="background: #6cc091;">
+<!-- Header -->
+			<header id="header">
 				<div class="inner">
 					<a href="javascript:void(0);" onclick="swapPage('home', true);" class="logo">
-						<img src="{% static 'images/logo.png' %}" style="width: 40px; height: 40px; margin-top: 8px" alt="E-TEC">
+						<img src="{% static 'images/logo.png' %}" style="width: 60px; height: 60px;" alt="E-TEC">
 					</a>
 					<nav id="nav">
 						<a href="javascript:void(0);" onclick="swapPage('home', true);">Home</a>
@@ -12,40 +12,53 @@
 					</nav>
 					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
 				</div>
-            </header>
-        <!-- Main -->
-			<section id="main" class="wrapper">
+			</header>
+
+		<!-- Banner -->
+			<section id="banner" style="background-image: url({% static 'images/innovatebanner.jpg' %})">
 				<div class="inner">
-					<header class="align-center">
-						<h2>Innovate</h2>
-						<p>Our services include, but are not limited to </p>
+					<header>
+						<h1>Innovative Rehab Courses</h1>
 						<div class="button" onclick="scrollToDiv('#contact_form');">Contact Us</div>
-                    </header>
-                    <hr class="major" />
-                    <!-- Content -->
-						<div class="row">
-							<section class="6u 12u$(medium)">
-								<h2>Innovative Rehabilitation</h2>
-								<p>Our state of the art rehabilitation training combines online courses with on-site practical applications specifically designed to sharpen the skills of educated medical professionals, from Physiotherapists and Chiropractors to Occupational Therapists and Personal Support Workers. Our courses detail case management strategies, analytical skill development, practical data collection, and operation of innovative technologies, resulting in elevated client care. With a performance-based approach, our training enhances the professional skills of care providers and delivers the most effective treatment plans for a myriad of cases. 
-								</p>
-							</section>
-							<section class="3u 6u(medium) 12u$(small)">
-								<h3>Online Modules</h3>
-								<p>
-									<strong>Integrated Disability Management </strong><br>
-									<br>
-									<strong>Multi-factoral Strategies of Home Modification </strong><br>
-									<br>
-									<strong>Chronic Pain Management and Game Ready Operation </strong> <br>
-								</p>
-							</section>
-							<section class="3u$ 6u$(medium) 12u$(small)">
-								<br>
-								<br>
-								<br>
-								<br>
-								<br>
-								<div class="button" onclick="scrollToDiv('#contact_form');">Learn More</div>
-							</section>
-                        </div>
-                        <hr class="major" />
+						<br>
+						<br>
+						<br>
+						<h3>These courses include, but are not limited to</h3>
+					</header>
+				</div>
+			</section>
+			<div class="inner">
+				<hr class="major"/>
+				<!-- Content -->
+				<h2 id="content">Chronic Pain Management and Innovative Treatment Strategies</h2>
+					<p>Chronic pain management poses a unique set of challenges to rehabilitation specialists and requires personalized, innovative treatment strategies. This customizable course is designed for chiropractic and physiotherapy clinics, occupational therapists, and community or multi-disciplinary rehabilitation, medical professionals to develop and improve upon skills relating to assessment, consultation, and treatment for patients living with chronic pain. Health care professionals who complete this course will build upon the following skills:
+					</p>
+					<p>
+					1. Categorizing patients into accurate care groups.
+					</p>		
+					<p>
+					2. Treatment strategies for specific chronic pain conditions.
+					</p>
+					<p>
+					3. Health care practices for physiotherapists and occupational therapists.
+					</p>
+					<p>
+					4. Utilizing knowledge gained from the Neuro-Rumsey Chronic Pain program to deliver multi-faceted treatment strategies.
+					</p>
+					<p>
+					5. Practical data collection and analysis for research studies.
+					</p>
+				<hr class="major" />
+				<!-- Content -->
+				<h2 id="content">Multi-factorial Strategies of Home Modification
+				</h2>
+					<p>For clients with physical limitations due to injury or chronic illness, home modification is a fundamental component in rehabilitation. Each patient’s case requires a personalized treatment plan that integrates assistive devices in the home. This course emphasizes ergonomic assessment techniques and application methods that will increase clients’ independence and restore the ability to perform activities of daily living. Our training highlights the importance of educating patients on safe usage of specific assistive devices, correct application procedures for patient assistance programs, and equipping care providers with the knowledge needed to develop effective treatment strategies.
+					</p>
+				<hr class="major" />
+				<!-- Content -->
+				<h2 id="content">Integrated Disability Management and Game Ready Operation
+				</h2>
+					<p>Game Ready is a revolutionary treatment system that sets a new standard in recovery for acute musculoskeletal injuries and post-op rehabilitation. Our in-depth operations training for this new technology is essential for medical specialists who want to stay up to date on the latest innovations in treatment methods. This course details best practices for the Game Ready pneumatic compression system along with ways to integrate this technology with traditional forms of physiotherapy and chiropractic rehabilitation. Compression therapy providers who complete our training will gain technical skills and practical knowledge needed to keep your clinic on the cutting-edge.
+					</p>
+				<hr class="major" />
+			</div>
