@@ -1,29 +1,37 @@
 {% load static %}
-		<!-- Header -->
-			<header id="header" style="background: #6cc091;">
+<!-- Header -->
+			<header id="header">
 				<div class="inner">
 					<a href="javascript:void(0);" onclick="swapPage('home', true);" class="logo">
-                        <img src="{% static 'images/logo.png' %}" style="width: 40px; height: 40px; margin-top: 5px" alt="E-TEC">
-                    </a>
-                    <nav id="nav">
-                        <a href="javascript:void(0);" onclick="swapPage('home', true);">Home</a>
-                        <a href="javascript:void(0);" onclick="swapPage('services', true);">Services</a>
-                        <a href="javascript:void(0);" onclick="swapPage('about', true);">About</a>
-                    </nav>
+						<img src="{% static 'images/logo.png' %}" style="width: 60px; height: 60px;" alt="E-TEC">
+					</a>
+					<nav id="nav">
+						<a href="javascript:void(0);" onclick="swapPage('home', true);">Home</a>
+						<a href="javascript:void(0);" onclick="swapPage('services', true);">Services</a>
+						<a href="javascript:void(0);" onclick="swapPage('about', true);">About</a>
+					</nav>
 					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
 				</div>
-            </header>
-        <!-- Main -->
-			<section id="main" class="wrapper">
-				<div class="inner">
-					<header class="align-center">
-						<h2>About</h2>
-						<p>Who we are </p>
-						<div class="button" onclick="scrollToDiv('#contact_form');">Contact Us</div>
-                    </header>
-                    <hr class="major" />
+			</header>
 
+		<!-- Banner -->
+			<section id="banner" style="background-image: url({% static 'images/aboutbanner.jpg' %})">
+				<div class="inner">
+					<header>
+						<h1>About</h1>
+						<div class="button" onclick="scrollToDiv('#contact_form');">Contact Us</div>
+						<br>
+						<br>
+						<br>
+						<h3>Who we are</h3>
+					</header>
+				</div>
+			</section>
+        <!-- Main -->
+				<div class="inner">
+                    <hr class="major"/>
 					<!-- Content -->
+					
 						<h2 id="content">We're pleased to meet you</h2>
 						<p>E-TEC accelerated training delivers cost-effective customized training and online courses tailored to meet the needs of rehabilitation clinics, medical specialists working in the community, and administrative support staff. With multifaceted teaching methods, employees can individually complete basic to advanced training, resulting in optimized workflow and a unified standard for internal procedures. 
 						</p>
@@ -54,5 +62,7 @@
 						<h2 id="content">
 						For more information, see our course catalog. 
 						</h2>
+						<div class="button" onclick="swapPage('services', true);">Learn More</div>
+					<hr class="major"/>
                 </div>
-            </section>
+    
